@@ -1,1 +1,1 @@
-Esse projeto tem como objetivo de como performar aplicações com React entendendo como funcionam os algoritmos internos da biblioteca e todo fluxo de renderização de componentes.
+Esse projeto tem como objetivo um estudo de como performar aplicações com React entendendo como funcionam os algoritmos internos da biblioteca e todo fluxo de renderização de componentes.
