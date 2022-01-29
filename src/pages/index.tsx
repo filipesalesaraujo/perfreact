@@ -1,9 +1,10 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useState } from "react";
 import { SearchResults } from "../components/SearchResults";
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
+  
   async function handleSearch(event: FormEvent) {
     event.preventDefault();
     if (!search.trim()) {
@@ -13,6 +14,11 @@ export default function Home() {
     const data = await response.json();
     setResults(data);
   }
+
+  const addToWishList = useCallback(async (id: number) => {
+    console.log(id);
+  }, []);
+
   return (
     <div>
       <h1>Search</h1>
@@ -24,7 +30,7 @@ export default function Home() {
         />
         <button type="submit">Buscar</button>
       </form>
-      <SearchResults results={results} />
+      <SearchResults results={results} onAddToWishList={addToWishList} />
     </div>
   );
 }
